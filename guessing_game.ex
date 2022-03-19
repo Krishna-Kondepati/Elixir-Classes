@@ -1,7 +1,20 @@
 defmodule GuessingGame do
+
+  def compare(secret_number, guess \\ :no_guess)
+
   def compare(secret_number, guess) when guess == secret_number do
     # Please implement the compare/2 function
     "Correct"
+  end
+
+  def compare(secret_number, :no_guess) do
+    # Please implement the compare/2 function
+    "Make a guess"
+  end
+
+  def compare(secret_number, guess) when abs(guess - secret_number) == 1 do
+      # Please implement the compare/2 function
+    "So close"
   end
 
   def compare(secret_number, guess) when guess > secret_number do
@@ -13,14 +26,5 @@ defmodule GuessingGame do
     # Please implement the compare/2 function
     "Too low"
   end
-
-  def compare(secret_number, guess) when guess + OR - secret_number do
-    # Please implement the compare/2 function
-    "So close"
-  end
-
-  def compare(secret_number, guess \\ 0) do
-    # Please implement the compare/2 function
-    "Make a guess"
-  end
 end
+
